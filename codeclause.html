@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter-CodeClause Project</title>
+    <link rel="stylesheet" type="text/css" href="codeclause.css">
+    <script src="codeclause.js"></script>
+</head>
+
+<body>
+    <div class="tabs">
+        <button class="tablinks active" onclick="openTab(event, 'length')">Length</button>
+        <button class="tablinks" onclick="openTab(event, 'temperature')">Temperature</button>
+        <button class="tablinks" onclick="openTab(event, 'area')">Area</button>
+        <button class="tablinks" onclick="openTab(event, 'volume')">Volume</button>
+        <button class="tablinks" onclick="openTab(event, 'weight')">Weight</button>
+        <button class="tablinks" onclick="openTab(event, 'time')">Time</button>
+    </div>
+
+    <div class="container">
+        <div id="weight" class="tabcontent">
+            <h2>Weight Converter</h2>
+            <!-- from pound to kilogram -->
+            <p>
+                <label>Pounds</label>
+                <input id="inputPounds" type="number" placeholder="Pounds to Kilogram"
+                    oninput="poundstokilogram(this.value)" onchange="poundstokilogram(this.value)">
+            </p>
+            <p>Kilograms: <span id="outputKilograms"></span></p> <br>
+
+            <!-- from kilogram to pound -->
+            <p>
+                <label>Kilograms</label>
+                <input id="inputKilogram" type="number" placeholder="Kilogram to Pounds"
+                    oninput="kilotopound(this.value)" onchange="kilotopound(this.value)">
+            </p>
+            <p>Pounds: <span id="kilogramtopounds"></span></p> <br>
+
+            <!-- from kilogram to gram -->
+            <p>
+                <label>kilogram</label>
+                <input id="inputKilo" type="number" placeholder="Kilogram to Gram" oninput="kilotogram(this.value)"
+                    onchange="kilotogram(this.value)">
+            </p>
+            <p>Grams <span id="outputGrams"></span></p> <br>
+
+            <!-- from gram to kilogram -->
+            <p>
+                <label>Gram</label>
+                <input id="inputGram" type="number" placeholder="Gram To Kilogram" oninput="gramtokilo(this.value)"
+                    onchange="gramtokilo(this.value)">
+            </p>
+            <p>Kilogram <span id="outputKilogram"></span></p><br>
+        </div>
+
+        <div id="temperature" class="tabcontent">
+            <h2>Temperature Converter</h2>
+            <!-- Degree Celsius to Kelvin -->
+            <p>
+                <label>Degree Celsius</label>
+                <input id="inputDeg" type="number" placeholder="Degree To Kelvin" oninput="degreetokelvin(this.value)"
+                    onchange="degreetokelvin(this.value)">
+            </p>
+            <p>Kelvin: <span id="outputKelvin"></span></p><br>
+
+            <!-- Kelvin to Degree Celsius -->
+            <p>
+                <label>Kelvin</label>
+                <input id="inputKel" type="number" placeholder="Kelvin To Degree Celsius"
+                    oninput="kelvintodegree(this.value)" onchange="kelvintodegree(this.value)">
+            </p>
+            <p>Degree Celsius: <span id="outputDegree"></span></p> <br>
+
+            <!-- Fahrenheit to Kelvin -->
+            <p>
+                <label>Kelvin</label>
+                <input id="inputFah" type="number" placeholder="Fahrenheit to Kelvin"
+                    oninput="fahrenheittokelvin(this.value)" onchange="fahrenheittokelvin(this.value)">
+            </p>
+            <p>Fahrenheit: <span id="outputfahrenheit"></span></p><br>
+
+            <!-- Fahrenheit to Degree -->
+            <p>
+                <label>Fahrenheit</label>
+                <input id="inputFahrenheit" type="number" placeholder="Fahrenheit to Kelvin"
+                    oninput="fahrenheittodegree(this.value)" onchange="fahrenheittodegree(this.value)">
+            </p>
+            <p>Degree: <span id="outputDeg"></span></p><br>
+
+            <!-- Kelvin to Fahrenheit -->
+            <p>
+                <label>Kelvin</label>
+                <input id="inputKelvin" type="number" placeholder="Kelvin to Fahrenheit"
+                    oninput="kelvintofahrenheit(this.value)" onchange="kelvintofahrenheit(this.value)">
+            </p>
+            <p>Fahrenheit: <span id="outputFah"></span></p><br>
+
+            <!-- Degree to Fahrenheit -->
+            <p>
+                <label>Degree</label>
+                <input id="inputDegree" type="number" placeholder="Kelvin to Fahrenheit"
+                    oninput="degreetofahrenheit(this.value)" onchange="degreetofahrenheit(this.value)">
+            </p>
+            <p>Fahrenheit: <span id="outputFahrenheit"></span></p><br>
+        </div>
+
+        <div id="length" class="tabcontent">
+            <h2>Length Converter</h2>
+
+            <!-- meter to centimeter -->
+            <p>
+                <label>Meter</label>
+                <input id="inputMeter" type="number" placeholder="Meter to Centimeter"
+                    oninput="metertocentimeter(this.value)" onchange="metertocentimeter(this.value)">
+            </p>
+            <p>Centimeter: <span id="outputCentimeter"></span></p><br>
+
+            <!-- meter to kilometer -->
+            <p>
+                <label>Meter</label>
+                <input id="inputMet" type="number" placeholder="Meter to Kilometer"
+                    oninput="metertokilometer(this.value)" onchange="metertokilometer(this.value)">
+            </p>
+            <p>Kilometer: <span id="outputKilometer"></span></p><br>
+
+            <!-- centimeter to meter -->
+            <p>
+                <label>Centimeter</label>
+                <input id="inputCentimeter" type="number" placeholder="Centimeter to Meter"
+                    oninput="centimetertometer(this.value)" onchange="centimetertometer(this.value)">
+            </p>
+            <p>Meter: <span id="outputMeter"></span></p><br>
+            </p>
+
+            <!-- centimeter to kilometer -->
+            <p>
+                <label>Centimeter</label>
+                <input id="inputCent" type="number" placeholder="Centimeter to Kilometer"
+                    oninput="centimetertokilometer(this.value)" onchange="centimetertokilometer(this.value)">
+            </p>
+            <p>Kilometer: <span id="outputKilo"></span></p><br>
+            </p>
+
+            <p>
+                <!-- kilometer to meter -->
+                <label>Kilometer</label>
+                <input id="inputKilometer" type="number" placeholder="Kilometer to Meter"
+                    oninput="kilometertometer(this.value)" onchange="kilometertometer(this.value)">
+            </p>
+            <p>Meter: <span id="outputMet"></span></p><br>
+            </p>
+
+            <!-- kilometer to centimeter -->
+            <p>
+                <label>Kilometer</label>
+                <input id="inputKilo" type="number" placeholder="Kilometer to Centimeter"
+                    oninput="kilometertocentimeter(this.value)" onchange="kilometertocentimeter(this.value)">
+            </p>
+            <p>Centimeter: <span id="outputCent"></span></p><br>
+            </p>
+
+        </div>
+
+        <div id="area" class="tabcontent">
+            <h2>Area Converter</h2>
+
+            <!-- Square Meter to Square Kilometer -->
+            <p>
+                <label>Square Meter</label>
+                <input id="inputSqrMeter" type="number" placeholder="Square Meter to Square Kilometer"
+                    oninput="sqrmetertosqrkilometer(this.value)" onchange="sqrmetertosqrkilometer(this.value)">
+            </p>
+            <p>Square Kilometer: <span id="outputSqrKilometer"></span></p> <br>
+
+            <!-- Square Meter to Square Centimeter -->
+            <p>
+                <label>Square Meter</label>
+                <input id="inputSqrMet" type="number" placeholder="Square Meter to Square Centimeter"
+                    oninput="sqrmetertosqrcentimeter(this.value)" onchange="sqrmetertosqrcentimeter(this.value)">
+            </p>
+            <p>Square Centimeter: <span id="outputSqrCentimeter"></span></p><br>
+
+            <!-- Square Kilometer to Square Centimeter -->
+            <p>
+                <label>Square Kilometer</label>
+                <input id="inputSqrKilometer" type="number" placeholder="Square Kilometer to Square Centimeter"
+                    oninput="sqrkilometertosqrcentimeter(this.value)"
+                    onchange="sqrkilometertosqrcentimeter(this.value)">
+            </p>
+            <p>Square Centimeter: <span id="outputSqrCent"></span></p><br>
+
+            <!-- Square Kilometer to Square Meter -->
+            <p>
+                <label>Square Kilometer</label>
+                <input id="inputSqrKilo" type="number" placeholder="Square Kilometer to Square Meter"
+                    oninput="sqrkilometertosqrmeter(this.value)" onchange="sqrkilometertosqrmeter(this.value)">
+            </p>
+            <p>Square Meter: <span id="outputSqrMeter"></span></p><br>
+
+            <!-- Square Centimeter to Square Meter -->
+            <p>
+                <label>Square Centimeter</label>
+                <input id="inputSqrCentimeter" type="number" placeholder="Square Centimeter to Square Meter"
+                    oninput="sqrcentimetertosqrmeter(this.value)" onchange="sqrcentimetertosqrmeter(this.value)">
+            </p>
+            <p>Square Meter: <span id="outputSqrMet"></span></p><br>
+
+            <!-- Square Centimeter to Square Kilometer -->
+            <p>
+                <label>Square Centimeter</label>
+                <input id="inputSqrCentimeter" type="number" placeholder="Square Centimeter to Square Kilometer"
+                    oninput="sqrcentimetertosqrkilometer(this.value)"
+                    onchange="sqrcentimetertosqrkilometer(this.value)">
+            </p>
+            <p>Square Kilometer: <span id="outputSqrKilo"></span></p><br>
+
+        </div>
+
+        <div id="volume" class="tabcontent">
+            <h2>Volume Converter</h2>
+
+            <!-- Cubic meter to Cubic Kilometer -->
+            <p>
+                <label>Cubic Meter</label>
+                <input id="inputMeter" type="number" placeholder="Cubic meter to Cubic Kilometer"
+                    oninput="cubicmetertocubickilometer(this.value)" onchange="cubicmetertocubickilometer(this.value)">
+            </p>
+            <p>Cubic Kilometer: <span id="outputCubicKilometer"></span></p><br>
+
+            <!-- Cubic meter to Cubic Centimeter -->
+            <p>
+                <label>Cubic Meter</label>
+                <input id="inputCubicMet" type="number" placeholder="Cubic meter to Cubic Centimeter"
+                    oninput="cubicmetertocubicCentimeter(this.value)"
+                    onchange="cubicmetertocubicCentimeter(this.value)">
+            </p>
+            <p>Cubic Centimeter: <span id="outputCubicCentimeter"></span></p><br>
+
+            <!-- Cubic Kilometer to Cubic Meter -->
+            <p>
+                <label>Cubic Kilometer</label>
+                <input id="inputCubicKilometer" type="number" placeholder="Cubic Kilometer to Cubic Meter"
+                    oninput="cubickilometertocubicmeter(this.value)" onchange="cubickilometertocubicmeter(this.value)">
+            </p>
+            <p>Cubic Meter: <span id="outputCubicMeter"></span></p><br>
+
+            <!-- Cubic Kilometer to Cubic Centimeter -->
+            <p>
+                <label>Cubic Kilometer</label>
+                <input id="inputCubicKilo" type="number" placeholder="Cubic Kilometer to Cubic Centimeter"
+                    oninput="cubickilometertocubicCentimeter(this.value)"
+                    onchange="cubickilometertocubicCentimeter(this.value)">
+            </p>
+            <p>Cubic Centimeter: <span id="outputCubicCent"></span></p><br>
+
+            <!-- Cubic Centimeter to Cubic Meter -->
+            <p>
+                <label>Cubic Centimeter</label>
+                <input id="inputCubicKilo" type="number" placeholder="Cubic Centimeter to Cubic Meter"
+                    oninput="cubiccentimetertocubicmeter(this.value)"
+                    onchange="cubiccentimetertocubicmeter(this.value)">
+            </p>
+            <p>Cubic Meter: <span id="outputCubicMet"></span></p><br>
+
+            <!-- Cubic Meter to Cubic Kilometer -->
+            <p>
+                <label>Cubic Centimeter</label>
+                <input id="inputCubicKilo" type="number" placeholder="Cubic Meter to Cubic Kilometer"
+                    oninput="cubiccentimetertocubickilometer(this.value)"
+                    onchange="cubiccentimetertocubickilometer(this.value)">
+            </p>
+            <p>Cubic Kilometer: <span id="outputCubicKilo"></span></p><br>
+
+        </div>
+
+        <div id="time" class="tabcontent">
+            <h2>Time Converter</h2>
+
+            <!-- Seconds to Minutes -->
+            <p>
+                <label>Seconds</label>
+                <input id="inputSeconds" type="number" placeholder="Seconds to Minutes"
+                    oninput="secondstominutes(this.value)" onchange="secondstominutes(this.value)">
+            </p>
+            <p>Minutes: <span id="outputMinutes"></span></p><br>
+
+            <!-- Seconds to Hour -->
+            <p>
+                <label>Seconds</label>
+                <input id="inputHour" type="number" placeholder="Seconds to Hour" oninput="secondstohour(this.value)"
+                    onchange="secondstohour(this.value)">
+            </p>
+            <p>Hour: <span id="outputHour"></span></p><br>
+
+            <!-- Minutes to Seconds -->
+            <p>
+                <label>Minutes</label>
+                <input id="inputHour" type="number" placeholder="Minutes to Seconds"
+                    oninput="minutestoseconds(this.value)" onchange="minutestoseconds(this.value)">
+            </p>
+            <p>Second: <span id="outputSeconds"></span></p><br>
+
+            <!-- Minutes to Hour -->
+            <p>
+                <label>Minutes</label>
+                <input id="inputMin" type="number" placeholder="Minutes to Hour" oninput="minutestohour(this.value)"
+                    onchange="minutestohour(this.value)">
+            </p>
+            <p>Hour: <span id="outputHr"></span></p><br>
+
+            <!-- Hour to Seconds -->
+            <p>
+                <label>Hour</label>
+                <input id="inputHour" type="number" placeholder="Hour to Seconds" oninput="hourtoseconds(this.value)"
+                    onchange="hourtoseconds(this.value)">
+            </p>
+            <p>Seconds: <span id="outputSec"></span></p><br>
+
+            <!-- Hour to Minutes -->
+            <p>
+                <label>Hour</label>
+                <input id="inputHr" type="number" placeholder="Hour to Minutes" oninput="hourtominutes(this.value)"
+                    onchange="hourtominutes(this.value)">
+            </p>
+            <p>Minutes: <span id="outputMin"></span></p><br>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
